@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hüpfi – Hüpfburgen & Partyverleih Mönchengladbach, Düsseldorf, Niederrhein</title>
+<meta name="description" content="Hüpfburgen & Partyverleih für Mönchengladbach, Rhein-Kreis-Neuss, Düsseldorf & Niederrhein. TÜV-zertifiziert, Schlechtwetter-Garantie, keine Anzahlung. Ab 249 €." />
+<link rel="icon" href="https://www.xn--hpfi-0ra.de/wp-content/uploads/go-x/u/fa7b4926-e55e-4eb3-8fb0-fcee1ef3f347/image-384x384.png" />
+<style>
+  :root{
+    --yellow:#FFD60A;
+    --yellow-dark:#FFB700;
+    --blue:#1E88FF;
+    --blue-dark:#0B5FD9;
+    --red:#FF3B5C;
+    --green:#1FBF75;
+    --ink:#0F172A;
+    --ink-soft:#334155;
+    --muted:#64748B;
+    --bg:#FFFFFF;
+    --bg-soft:#FFF9E5;
+    --border:#E5E7EB;
+    --shadow:0 10px 30px -10px rgba(15,23,42,.18);
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:80px}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1180px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{line-height:1.15;font-weight:800;letter-spacing:-.02em}
+  h1{font-size:clamp(2.2rem,5vw,3.8rem)}
+  h2{font-size:clamp(1.7rem,3.5vw,2.6rem);margin-bottom:.6em}
+  h3{font-size:1.25rem;margin-bottom:.4em}
+  p{color:var(--ink-soft)}
+  section{padding:80px 0;position:relative}
+
+  /* NAV */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;max-width:1180px;margin:0 auto;gap:16px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.4rem;color:var(--ink)}
+  .logo img{width:42px;height:42px;border-radius:10px}
+  .nav-links{display:flex;align-items:center;gap:8px}
+  .nav-links a{padding:10px 14px;border-radius:10px;font-weight:600;color:var(--ink-soft);transition:.2s}
+  .nav-links a:hover{background:var(--bg-soft);color:var(--ink)}
+  .nav-links .btn{padding:10px 18px}
+  .menu-toggle{display:none;background:none;border:0;font-size:1.6rem;cursor:pointer}
+
+  /* BUTTONS */
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:999px;font-weight:700;font-size:1rem;cursor:pointer;transition:transform .15s,box-shadow .2s,background .2s;border:0;text-align:center}
+  .btn-primary{background:var(--red);color:#fff;box-shadow:0 8px 20px -6px rgba(255,59,92,.55)}
+  .btn-primary:hover{transform:translateY(-2px);background:#e62d4f}
+  .btn-secondary{background:#fff;color:var(--ink);border:2px solid var(--ink)}
+  .btn-secondary:hover{background:var(--ink);color:#fff}
+  .btn-yellow{background:var(--yellow);color:var(--ink)}
+  .btn-yellow:hover{background:var(--yellow-dark)}
+
+  /* HERO */
+  .hero{padding:60px 0 80px;background:
+    radial-gradient(circle at 10% 20%,rgba(255,214,10,.25),transparent 40%),
+    radial-gradient(circle at 90% 80%,rgba(30,136,255,.18),transparent 40%),
+    #fff}
+  .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center}
+  .hero-eyebrow{display:inline-block;background:var(--yellow);color:var(--ink);padding:6px 14px;border-radius:999px;font-weight:700;font-size:.85rem;margin-bottom:18px}
+  .hero h1 span{background:linear-gradient(120deg,var(--red),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lead{font-size:1.15rem;margin:18px 0 28px;max-width:560px}
+  .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-img-wrap{position:relative}
+  .hero-img-wrap img{border-radius:24px;box-shadow:var(--shadow);aspect-ratio:1;object-fit:cover}
+  .hero-img-wrap::before{content:"";position:absolute;inset:-15px;background:linear-gradient(135deg,var(--yellow),var(--red));border-radius:32px;z-index:-1;transform:rotate(-2deg)}
+  .price-badge{position:absolute;bottom:-15px;right:-15px;background:#fff;padding:14px 20px;border-radius:16px;box-shadow:var(--shadow);font-weight:800;color:var(--ink)}
+  .price-badge small{display:block;color:var(--muted);font-weight:500;font-size:.75rem}
+  .price-badge strong{font-size:1.4rem;color:var(--red)}
+
+  /* TRUST */
+  .trust{background:var(--ink);color:#fff;padding:32px 0}
+  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+  .trust-item{display:flex;flex-direction:column;align-items:center;gap:6px;font-weight:600;font-size:.95rem}
+  .trust-icon{font-size:1.6rem}
+
+  /* PRODUCT SECTION */
+  .product{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .product.reverse{direction:rtl}
+  .product.reverse > *{direction:ltr}
+  .product img{border-radius:var(--radius);box-shadow:var(--shadow);aspect-ratio:1;object-fit:cover}
+  .product .tag{display:inline-block;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;margin-bottom:8px}
+  .product ul{list-style:none;margin:18px 0 24px}
+  .product ul li{padding:6px 0;color:var(--ink-soft)}
+  .product ul li::before{content:"✓";color:var(--green);font-weight:800;margin-right:10px}
+  .price-inline{font-size:1.3rem;font-weight:800;color:var(--ink);margin:18px 0}
+  .price-inline span{color:var(--red)}
+
+  .pills{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 24px}
+  .pill{background:var(--bg-soft);border:1px solid #FFE066;color:var(--ink);padding:8px 14px;border-radius:999px;font-weight:600;font-size:.9rem}
+
+  .section-soft{background:var(--bg-soft)}
+
+  /* GUARANTEE */
+  .guarantee{background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff;text-align:center}
+  .guarantee h2{color:#fff}
+  .guarantee p{color:rgba(255,255,255,.9);max-width:680px;margin:0 auto 30px;font-size:1.1rem}
+  .g-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:820px;margin:0 auto}
+  .g-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:30px;border-radius:var(--radius);backdrop-filter:blur(6px)}
+  .g-card .ico{font-size:2.4rem;margin-bottom:10px}
+  .g-card h3{color:#fff}
+  .g-card p{color:rgba(255,255,255,.85);margin:0}
+
+  /* FAQ */
+  .faq-list{max-width:820px;margin:0 auto}
+  .faq-item{border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden;background:#fff;transition:.2s}
+  .faq-item.open{box-shadow:var(--shadow);border-color:var(--yellow)}
+  .faq-q{width:100%;text-align:left;padding:20px 24px;background:none;border:0;font-weight:700;font-size:1.05rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--ink)}
+  .faq-q::after{content:"+";font-size:1.6rem;font-weight:400;color:var(--red);transition:.2s;flex-shrink:0}
+  .faq-item.open .faq-q::after{transform:rotate(45deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;padding:0 24px}
+  .faq-a-inner{padding-bottom:20px;color:var(--ink-soft)}
+
+  /* CONTACT */
+  .contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:50px}
+  .form{background:#fff;border:1px solid var(--border);padding:32px;border-radius:var(--radius);box-shadow:var(--shadow)}
+  .form label{display:block;font-weight:600;margin-bottom:6px;font-size:.92rem}
+  .form .field{margin-bottom:16px}
+  .form input,.form select,.form textarea{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:10px;font-family:inherit;font-size:1rem;transition:.15s;background:#fff}
+  .form input:focus,.form select:focus,.form textarea:focus{outline:0;border-color:var(--blue)}
+  .form textarea{min-height:110px;resize:vertical}
+  .contact-info{display:flex;flex-direction:column;justify-content:center}
+  .contact-info h2{margin-bottom:24px}
+  .info-item{display:flex;gap:16px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--border)}
+  .info-item .ico{width:44px;height:44px;border-radius:12px;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+  .info-item strong{display:block;color:var(--ink)}
+  .info-item span{color:var(--muted);font-size:.92rem}
+
+  /* FOOTER */
+  .footer{background:var(--ink);color:#cbd5e1;padding:50px 0 24px}
+  .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;margin-bottom:32px}
+  .footer h4{color:#fff;font-size:1rem;margin-bottom:14px;font-weight:700}
+  .footer ul{list-style:none}
+  .footer li{margin-bottom:8px}
+  .footer a{color:#94a3b8;transition:.15s}
+  .footer a:hover{color:var(--yellow)}
+  .footer .logo{color:#fff;margin-bottom:12px}
+  .footer-bottom{border-top:1px solid #1e293b;padding-top:20px;text-align:center;font-size:.85rem;color:#64748b}
+
+  /* SCROLL ANIM */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* RESPONSIVE */
+  @media (max-width:880px){
+    section{padding:60px 0}
+    .hero-grid,.product,.product.reverse,.contact-grid{grid-template-columns:1fr;gap:40px;direction:ltr}
+    .trust-grid{grid-template-columns:repeat(2,1fr);gap:20px}
+    .g-grid{grid-template-columns:1fr}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:24px}
+    .nav-links{position:fixed;top:68px;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:16px 20px;border-bottom:1px solid var(--border);transform:translateY(-120%);transition:.25s;gap:4px}
+    .nav-links.open{transform:translateY(0)}
+    .nav-links a{padding:14px 16px}
+    .menu-toggle{display:block}
+    .price-badge{right:0}
+  }
+  @media (max-width:480px){
+    .footer-grid{grid-template-columns:1fr}
+    .hero-ctas .btn{width:100%;justify-content:center}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">
+      <img src="https://www.xn--hpfi-0ra.de/wp-content/uploads/go-x/u/fa7b4926-e55e-4eb3-8fb0-fcee1ef3f347/image-384x384.png" alt="Hüpfi Logo" />
+      Hüpfi
+    </a>
+    <button class="menu-toggle" aria-label="Menü">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#huepfburgen">Hüpfburgen</a>
+      <a href="#partyverleih">Partyverleih</a>
+      <a href="#faq">FAQ</a>
+      <a href="#kontakt" class="btn btn-primary">Jetzt anfragen</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <span class="hero-eyebrow">🎉 Mönchengladbach · Düsseldorf · Niederrhein</span>
+      <h1>Die Party, die <span>alle hüpfen</span> lässt.</h1>
+      <p class="lead">Hüpfburgen & Partyverleih – TÜV-zertifiziert, mit Lieferung & Aufbau. Ohne Anzahlung, ohne Kaution, mit Schlechtwetter- & Krankheits-Garantie.</p>
+      <div class="hero-ctas">
+        <a href="#kontakt" class="btn btn-primary">Jetzt unverbindlich anfragen →</a>
+        <a href="#huepfburgen" class="btn btn-secondary">Hüpfburgen ansehen</a>
+      </div>
+    </div>
+    <div class="hero-img-wrap reveal">
+      <img src="https://www.xn--hpfi-0ra.de/wp-content/uploads/go-x/u/25dafa44-cedc-451c-b661-b6d9406d979c/l0,t0,w640,h640/image.jpg" alt="Kinder springen auf bunter Hüpfburg" />
+      <div class="price-badge">
+        <small>Hüpfburg ab</small>
+        <strong>249 € / WE</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust" style="padding:32px 0">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item"><span class="trust-icon">💸</span>Keine Anzahlung</div>
+      <div class="trust-item"><span class="trust-icon">☔</span>Schlechtwetter-Garantie</div>
+      <div class="trust-item"><span class="trust-icon">🛡️</span>TÜV-zertifiziert</div>
+      <div class="trust-item"><span class="trust-icon">🚚</span>Lieferung inklusive</div>
+    </div>
+  </div>
+</section>
+
+<!-- HÜPFBURGEN -->
+<section id="huepfburgen">
+  <div class="container product reveal">
+    <div>
+      <img src="https://www.xn--hpfi-0ra.de/wp-content/uploads/go-x/u/37b2b6b4-d246-4036-b3fb-c22e50d0a00d/l157,t55,w695,h695/image.jpg" alt="Hüpfburg mieten Mönchengladbach" />
+    </div>
+    <div>
+      <span class="tag">Hüpfburgen mieten</span>
+      <h2>Strahlende Kinderaugen. Sorgenfreie Eltern.</h2>
+      <p>Unsere TÜV-geprüften Hüpfburgen sind das Herzstück jedes Kindergeburtstags, Familienfests oder Firmenevents. Wir liefern, bauen auf, holen wieder ab – du musst dich um nichts kümmern.</p>
+      <ul>
+        <li>TÜV-zertifiziert & regelmäßig gewartet</li>
+        <li>Lieferung, Aufbau & Abbau inklusive</li>
+        <li>Alternativ Selbstabholung in Sasserath-Mönchengladbach</li>
+        <li>Modelle für drinnen & draußen</li>
+      </ul>
+      <div class="price-inline">Ab <span>249 €</span> fürs ganze Wochenende</div>
+      <a href="#kontakt" class="btn btn-primary">Hüpfburg anfragen</a>
+    </div>
+  </div>
+</section>
+
+<!-- PARTYVERLEIH -->
+<section id="partyverleih" class="section-soft">
+  <div class="container product reverse reveal">
+    <div>
+      <img src="https://www.xn--hpfi-0ra.de/wp-content/uploads/go-x/u/1d40e181-2eaa-40f5-84bc-5829e8993386/l270,t0,w1080,h1080/image-768x768.jpg" alt="Partyverleih Equipment" />
+    </div>
+    <div>
+      <span class="tag">Partyverleih</span>
+      <h2>Alles für deine Party – aus einer Hand.</h2>
+      <p>Vom Stehtisch bis zur Slusheismaschine: Wir haben das komplette Equipment für deine Feier, Hochzeit, Firmenevent oder Geburtstag. Beratung, Lieferung & Abholung übernehmen wir.</p>
+      <div class="pills">
+        <span class="pill">Stehtische</span>
+        <span class="pill">Bierzeltgarnituren</span>
+        <span class="pill">Flaschenkühlschränke</span>
+        <span class="pill">Slusheismaschine</span>
+        <span class="pill">Musikboxen</span>
+        <span class="pill">Kühlwagen</span>
+        <span class="pill">Zelte</span>
+        <span class="pill">Veranstaltungsplanung</span>
+      </div>
+      <a href="#kontakt" class="btn btn-yellow">Equipment anfragen</a>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIE -->
+<section class="guarantee">
+  <div class="container reveal">
+    <h2>Unsere Doppel-Garantie für dich</h2>
+    <p>Wir wissen: Eine Feier zu planen ist Stress genug. Bei uns trägst du kein finanzielles Risiko – versprochen.</p>
+    <div class="g-grid">
+      <div class="g-card">
+        <div class="ico">☔</div>
+        <h3>Schlechtwetter-Garantie</h3>
+        <p>Regnet's am Eventtag in Strömen? Sag ab – ohne Kosten. Versprochen.</p>
+      </div>
+      <div class="g-card">
+        <div class="ico">🤒</div>
+        <h3>Krankheits-Garantie</h3>
+        <p>Geburtstagskind krank? Familie flach? Kein Problem, keine Kosten.</p>
+      </div>
+    </div>
+    <p style="margin-top:30px;font-weight:600">Außerdem: Keine Anzahlung. Keine Kaution. Keine Stornierungskosten.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div style="text-align:center;max-width:680px;margin:0 auto 40px" class="reveal">
+      <h2>Häufige Fragen</h2>
+      <p>Alles, was du vor deiner Buchung wissen musst.</p>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item"><button class="faq-q">Wie lange kann ich eine Hüpfburg mieten?</button><div class="faq-a"><div class="faq-a-inner">Standardmäßig vermieten wir unsere Hüpfburgen übers ganze Wochenende (Freitag bis Montag) zum gleichen Preis. Auch tageweise oder über mehrere Wochen ist auf Anfrage möglich.</div></div></div>
+      <div class="faq-item"><button class="faq-q">Wird die Hüpfburg geliefert und aufgebaut?</button><div class="faq-a"><div class="faq-a-inner">Ja! Lieferung, Aufbau und Abbau sind im Mietpreis inklusive. Alternativ kannst du dein Equipment auch selbst bei uns in Sasserath-Mönchengladbach abholen (Fr. & Mo. 16:30–18:00 Uhr).</div></div></div>
+      <div class="faq-item"><button class="faq-q">Was passiert bei schlechtem Wetter?</button><div class="faq-a"><div class="faq-a-inner">Unsere Schlechtwetter-Garantie greift: Wenn das Wetter nicht mitspielt, kannst du kostenfrei stornieren. Es entstehen keinerlei Kosten für dich.</div></div></div>
+      <div class="faq-item"><button class="faq-q">Was ist, wenn das Geburtstagskind krank wird?</button><div class="faq-a"><div class="faq-a-inner">Mit unserer Krankheits-Garantie bist du auf der sicheren Seite. Krankheit = kostenfreie Stornierung. Ohne Wenn und Aber.</div></div></div>
+      <div class="faq-item"><button class="faq-q">Muss ich eine Anzahlung oder Kaution leisten?</button><div class="faq-a"><div class="faq-a-inner">Nein. Wir verlangen weder Anzahlung noch Kaution. Du zahlst erst nach erfolgreicher Lieferung – per Vorkasse oder bequem mit EC-Karte vor Ort.</div></div></div>
+      <div class="faq-item"><button class="faq-q">In welchen Regionen liefert ihr?</button><div class="faq-a"><div class="faq-a-inner">Wir liefern in Mönchengladbach, dem Rhein-Kreis-Neuss, Düsseldorf und im gesamten Niederrhein. Frag uns einfach für deinen Ort an!</div></div></div>
+      <div class="faq-item"><button class="faq-q">Wie kann ich bezahlen?</button><div class="faq-a"><div class="faq-a-inner">Du kannst per Vorkasse (Überweisung) oder bei Lieferung bequem mit EC-Karte zahlen. Bargeld nehmen wir natürlich auch.</div></div></div>
+      <div class="faq-item"><button class="faq-q">Sind die Hüpfburgen sicher?</button><div class="faq-a"><div class="faq-a-inner">Absolut. Alle unsere Hüpfburgen sind TÜV-zertifiziert und werden regelmäßig geprüft, gereinigt und gewartet. Die Sicherheit deiner Kids ist unsere Priorität.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt" class="section-soft">
+  <div class="container">
+    <div class="contact-grid">
+      <form class="form reveal" onsubmit="event.preventDefault();alert('Danke! Deine Anfrage wurde gesendet. Wir melden uns innerhalb von 24h.');this.reset();">
+        <h2 style="margin-bottom:20px">Jetzt unverbindlich anfragen</h2>
+        <div class="field">
+          <label for="name">Dein Name</label>
+          <input id="name" name="name" type="text" required placeholder="Max Mustermann" />
+        </div>
+        <div class="field">
+          <label for="email">E-Mail oder Telefon</label>
+          <input id="email" name="email" type="text" required placeholder="max@example.de" />
+        </div>
+        <div class="field">
+          <label for="datum">Wunschdatum</label>
+          <input id="datum" name="datum" type="date" required />
+        </div>
+        <div class="field">
+          <label for="art">Was brauchst du?</label>
+          <select id="art" name="art" required>
+            <option value="">Bitte auswählen…</option>
+            <option>Hüpfburg</option>
+            <option>Partyverleih (Equipment)</option>
+            <option>Hüpfburg + Partyverleih</option>
+            <option>Komplette Eventplanung</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="msg">Deine Nachricht</label>
+          <textarea id="msg" name="msg" placeholder="Erzähl uns kurz von deiner Feier…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Anfrage senden →</button>
+      </form>
+
+      <div class="contact-info reveal">
+        <h2>Lieber direkt reden?</h2>
+        <p style="margin-bottom:20px">Wir sind für dich da – schnelle Antwort garantiert.</p>
+        <a href="tel:021619992335" class="info-item">
+          <div class="ico">📞</div>
+          <div><strong>02161 9992335</strong><span>Mo–Fr persönlich erreichbar</span></div>
+        </a>
+        <a href="mailto:info@eventmanufaktur-esch.de" class="info-item">
+          <div class="ico">✉️</div>
+          <div><strong>info@eventmanufaktur-esch.de</strong><span>Antwort innerhalb von 24h</span></div>
+        </a>
+        <div class="info-item">
+          <div class="ico">📍</div>
+          <div><strong>Sasserath, Mönchengladbach</strong><span>Selbstabholung Fr. & Mo. 16:30–18:00</span></div>
+        </div>
+        <a href="https://www.instagram.com/huepfi_manufaktur/" target="_blank" rel="noopener" class="info-item">
+          <div class="ico">📸</div>
+          <div><strong>@huepfi_manufaktur</strong><span>Folg uns für neue Hüpfburgen & Aktionen</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo">
+          <img src="https://www.xn--hpfi-0ra.de/wp-content/uploads/go-x/u/fa7b4926-e55e-4eb3-8fb0-fcee1ef3f347/image-384x384.png" alt="Hüpfi" style="width:42px;height:42px;border-radius:10px" />
+          Hüpfi
+        </div>
+        <p style="color:#94a3b8;font-size:.92rem">Hüpfburgen- und Partyverleih für Mönchengladbach, Rhein-Kreis-Neuss, Düsseldorf und den Niederrhein.</p>
+        <p style="color:#64748b;font-size:.82rem;margin-top:10px">powered by Eventmanufaktur Esch GmbH</p>
+      </div>
+      <div>
+        <h4>Angebot</h4>
+        <ul>
+          <li><a href="#huepfburgen">Hüpfburgen</a></li>
+          <li><a href="#partyverleih">Partyverleih</a></li>
+          <li><a href="#kontakt">Eventplanung</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Service</h4>
+        <ul>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="tel:021619992335">02161 9992335</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Folge uns</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/huepfi_manufaktur/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.xn--hpfi-0ra.de/impressum/">Impressum</a></li>
+          <li><a href="https://www.xn--hpfi-0ra.de/datenschutz/">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© <span id="yr"></span> Eventmanufaktur Esch GmbH · Alle Rechte vorbehalten</div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  const toggle = document.querySelector('.menu-toggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const open = item.classList.toggle('open');
+      a.style.maxHeight = open ? a.scrollHeight + 'px' : '0';
+    });
+  });
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
