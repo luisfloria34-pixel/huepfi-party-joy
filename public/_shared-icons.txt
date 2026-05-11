@@ -1,0 +1,2 @@
+SVG icons reference (inline in HTML files):
+phone, mail, mappin, instagram, clock, truck, shield, message, check, sun-rain, heart, calendar, ruler, users, sparkles, music, lightbulb, cloud, popcorn, candy, beer, arrow-right, menu, plus
