@@ -54,7 +54,7 @@
           <h3>Popcornmaschine</h3>
           <p>Frisch poppendes Popcorn direkt vor den Augen deiner Gäste – inklusive Mais & Tüten.</p>
           <div class="card-rent">Wochenende: <strong>ab 79 €</strong></div>
-          <a href="/#kontakt" class="btn btn-primary btn-block">Equipment anfragen</a>
+          <button type="button" class="btn btn-cart btn-block" data-add-cart data-id="eq-popcornmaschine" data-name="Popcornmaschine" data-price="79" data-unit="pro WE">+ Zum Warenkorb</button>
         </div>
       </article>
 
@@ -65,7 +65,7 @@
           <h3>Zuckerwattemaschine</h3>
           <p>Bunte Zuckerwatte für Klein und Groß – einfach in der Bedienung, riesiger Spaßfaktor.</p>
           <div class="card-rent">Wochenende: <strong>ab 79 €</strong></div>
-          <a href="/#kontakt" class="btn btn-primary btn-block">Equipment anfragen</a>
+          <button type="button" class="btn btn-cart btn-block" data-add-cart data-id="eq-zuckerwattemaschine" data-name="Zuckerwattemaschine" data-price="79" data-unit="pro WE">+ Zum Warenkorb</button>
         </div>
       </article>
 
@@ -76,7 +76,7 @@
           <h3>Bierzeltgarnituren</h3>
           <p>Robuste Garnituren mit Tisch und zwei Bänken für je 8–10 Personen – perfekt für jedes Fest.</p>
           <div class="card-rent">Pro Garnitur: <strong>ab 12 €</strong></div>
-          <a href="/#kontakt" class="btn btn-primary btn-block">Equipment anfragen</a>
+          <button type="button" class="btn btn-cart btn-block" data-add-cart data-id="eq-bierzeltgarnituren" data-name="Bierzeltgarnituren" data-price="12" data-unit="pro WE">+ Zum Warenkorb</button>
         </div>
       </article>
 
@@ -87,7 +87,7 @@
           <h3>Musikbox / PA-Anlage</h3>
           <p>Mobile Boxen mit Bluetooth, Mikrofon-Anschluss und kräftigem Sound – für drinnen und draußen.</p>
           <div class="card-rent">Wochenende: <strong>ab 49 €</strong></div>
-          <a href="/#kontakt" class="btn btn-primary btn-block">Equipment anfragen</a>
+          <button type="button" class="btn btn-cart btn-block" data-add-cart data-id="eq-musikbox-pa-anlage" data-name="Musikbox / PA-Anlage" data-price="49" data-unit="pro WE">+ Zum Warenkorb</button>
         </div>
       </article>
 
@@ -98,7 +98,7 @@
           <h3>Lichttechnik</h3>
           <p>LED-Spots, Lichterketten und Disco-Effekte – verwandelt jeden Raum in eine Partyzone.</p>
           <div class="card-rent">Wochenende: <strong>ab 39 €</strong></div>
-          <a href="/#kontakt" class="btn btn-primary btn-block">Equipment anfragen</a>
+          <button type="button" class="btn btn-cart btn-block" data-add-cart data-id="eq-lichttechnik" data-name="Lichttechnik" data-price="39" data-unit="pro WE">+ Zum Warenkorb</button>
         </div>
       </article>
 
@@ -109,7 +109,7 @@
           <h3>Nebelmaschine</h3>
           <p>Kompakte Nebelmaschine für magische Lichtstimmung – inklusive Fluid und Fernbedienung.</p>
           <div class="card-rent">Wochenende: <strong>ab 35 €</strong></div>
-          <a href="/#kontakt" class="btn btn-primary btn-block">Equipment anfragen</a>
+          <button type="button" class="btn btn-cart btn-block" data-add-cart data-id="eq-nebelmaschine" data-name="Nebelmaschine" data-price="35" data-unit="pro WE">+ Zum Warenkorb</button>
         </div>
       </article>
 
@@ -131,6 +131,24 @@
     <div class="footer-bottom">© <span id="yr"></span> Eventmanufaktur Esch GmbH · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></div>
   </div>
 </footer>
+<button class="cart-fab" data-open-cart aria-label="Warenkorb öffnen">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+  Warenkorb <span class="cart-count" data-cart-count data-empty="true">0</span>
+</button>
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+  <div class="cart-back" data-close-cart></div>
+  <div class="cart-panel">
+    <div class="cart-head"><h3>Dein Warenkorb</h3><button class="cart-close" data-close-cart aria-label="schließen"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-foot">
+      <div class="cart-total"><span class="label">Richtwert gesamt</span><span class="amount" id="cartTotal">0 €</span></div>
+      <textarea class="cart-notes" id="cartNotes" placeholder="Anmerkungen (optional)…"></textarea>
+      <div class="cart-hint">Preise sind Richtwerte. Den finalen Preis bestätigen wir nach deiner Anfrage.</div>
+      <a class="btn btn-primary btn-block" href="/#kontakt" id="cartToRequest">Zur Anfrage übernehmen</a>
+    </div>
+  </div>
+</aside>
+
 
 <script src="/huepfi.js"></script>
 </body>
