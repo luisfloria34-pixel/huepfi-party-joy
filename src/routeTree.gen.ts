@@ -10,11 +10,23 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as HuepfburgenRouteImport } from './routes/huepfburgen'
+import { Route as EventmanufakturRouteImport } from './routes/eventmanufaktur'
+import { Route as EquipmentRouteImport } from './routes/equipment'
 import { Route as IndexRouteImport } from './routes/index'
 
 const HuepfburgenRoute = HuepfburgenRouteImport.update({
   id: '/huepfburgen',
   path: '/huepfburgen',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventmanufakturRoute = EventmanufakturRouteImport.update({
+  id: '/eventmanufaktur',
+  path: '/eventmanufaktur',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EquipmentRoute = EquipmentRouteImport.update({
+  id: '/equipment',
+  path: '/equipment',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,27 +37,35 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/equipment': typeof EquipmentRoute
+  '/eventmanufaktur': typeof EventmanufakturRoute
   '/huepfburgen': typeof HuepfburgenRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/equipment': typeof EquipmentRoute
+  '/eventmanufaktur': typeof EventmanufakturRoute
   '/huepfburgen': typeof HuepfburgenRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/equipment': typeof EquipmentRoute
+  '/eventmanufaktur': typeof EventmanufakturRoute
   '/huepfburgen': typeof HuepfburgenRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/huepfburgen'
+  fullPaths: '/' | '/equipment' | '/eventmanufaktur' | '/huepfburgen'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/huepfburgen'
-  id: '__root__' | '/' | '/huepfburgen'
+  to: '/' | '/equipment' | '/eventmanufaktur' | '/huepfburgen'
+  id: '__root__' | '/' | '/equipment' | '/eventmanufaktur' | '/huepfburgen'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  EquipmentRoute: typeof EquipmentRoute
+  EventmanufakturRoute: typeof EventmanufakturRoute
   HuepfburgenRoute: typeof HuepfburgenRoute
 }
 
@@ -56,6 +76,20 @@ declare module '@tanstack/react-router' {
       path: '/huepfburgen'
       fullPath: '/huepfburgen'
       preLoaderRoute: typeof HuepfburgenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/eventmanufaktur': {
+      id: '/eventmanufaktur'
+      path: '/eventmanufaktur'
+      fullPath: '/eventmanufaktur'
+      preLoaderRoute: typeof EventmanufakturRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/equipment': {
+      id: '/equipment'
+      path: '/equipment'
+      fullPath: '/equipment'
+      preLoaderRoute: typeof EquipmentRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,8 +104,20 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  EquipmentRoute: EquipmentRoute,
+  EventmanufakturRoute: EventmanufakturRoute,
   HuepfburgenRoute: HuepfburgenRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
