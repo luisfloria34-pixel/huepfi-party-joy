@@ -16,7 +16,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{font-family:'Nunito',system-ui,sans-serif;color:var(--foreground);background:var(--background);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:'Poppins',system-ui,sans-serif;color:var(--foreground);background:var(--background);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:0;background:none}
@@ -463,3 +463,21 @@ a.info-item:hover .ico:not(.ico-insta){background:var(--primary);color:#fff}
   .slide-nav{width:36px;height:36px}
   .slideshow{aspect-ratio:4/5}
 }
+/* HÜPFBURG CAROUSEL CTA */
+.hb-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px}
+.hb-slideshow{margin-top:8px}
+.hb-slideshow .slide-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.hb-slideshow .slide-meta span{background:rgba(255,255,255,.18);backdrop-filter:blur(6px);padding:6px 12px;border-radius:999px;font-size:.85rem;font-weight:600;border:1px solid rgba(255,255,255,.25)}
+
+/* SCHULFEST BANNER */
+.schulfest{padding:100px 0;background:linear-gradient(135deg,#EFF6FF 0%,#FFF7ED 100%)}
+.sf-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.sf-img{border-radius:32px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/3}
+.sf-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.sf-img:hover img{transform:scale(1.05)}
+.sf-text h2{font-size:clamp(1.8rem,3.5vw,2.8rem);margin:8px 0 18px}
+.sf-text p{color:#475569;font-size:1.05rem;margin-bottom:22px}
+.sf-list{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:10px}
+.sf-list li{padding-left:28px;position:relative;color:#334155;font-weight:500}
+.sf-list li::before{content:"";position:absolute;left:0;top:8px;width:18px;height:18px;background:var(--accent);border-radius:50%;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");background-size:12px;background-repeat:no-repeat;background-position:center}
+@media(max-width:860px){.sf-grid{grid-template-columns:1fr;gap:32px}.schulfest{padding:70px 0}}

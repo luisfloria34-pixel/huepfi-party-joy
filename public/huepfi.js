@@ -40,11 +40,11 @@
     },4200);
   }
 
-  /* ---------- SLIDESHOW ---------- */
-  const slideshow=document.querySelector('.slideshow');
-  if(slideshow){
+  /* ---------- SLIDESHOW (supports multiple) ---------- */
+  document.querySelectorAll('.slideshow').forEach(slideshow=>{
     const slides=slideshow.querySelectorAll('.slide');
     const dotsWrap=slideshow.querySelector('.slide-dots');
+    if(!slides.length||!dotsWrap)return;
     let idx=0,timer;
     slides.forEach((_,i)=>{
       const d=document.createElement('button');
@@ -59,11 +59,13 @@
       slides[idx].classList.add('active');dots[idx].classList.add('active');
       if(manual)reset();
     }
-    function reset(){clearInterval(timer);timer=setInterval(()=>go(idx+1),5000);}
-    slideshow.querySelector('.slide-nav.prev').addEventListener('click',()=>go(idx-1,true));
-    slideshow.querySelector('.slide-nav.next').addEventListener('click',()=>go(idx+1,true));
+    function reset(){clearInterval(timer);timer=setInterval(()=>go(idx+1),5500);}
+    const prev=slideshow.querySelector('.slide-nav.prev');
+    const next=slideshow.querySelector('.slide-nav.next');
+    if(prev)prev.addEventListener('click',()=>go(idx-1,true));
+    if(next)next.addEventListener('click',()=>go(idx+1,true));
     reset();
-  }
+  });
 
   /* ---------- CART ---------- */
   const CART_KEY='huepfi_cart';
