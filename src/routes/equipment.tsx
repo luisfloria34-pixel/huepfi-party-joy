@@ -4,7 +4,7 @@ export const Route = createFileRoute("/equipment")({
   head: () => ({
     meta: [
       { title: "Party-Equipment mieten | Hüpfi Mönchengladbach" },
-      { name: "description", content: "Popcornmaschine, Zuckerwatte, Bierzeltgarnituren, Musikboxen & mehr – Equipment-Verleih in Mönchengladbach, Düsseldorf & Niederrhein." },
+      { name: "description", content: "Bierzeltgarnituren, Musikboxen, Lichttechnik, Nebelmaschine & mehr – Equipment-Verleih in Mönchengladbach, Düsseldorf & Niederrhein." },
     ],
   }),
   component: EquipmentPage,
