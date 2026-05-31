@@ -141,6 +141,12 @@
   function closeDrawer(){if(drawer){drawer.classList.remove('open');document.body.style.overflow='';}}
   document.querySelectorAll('[data-open-cart]').forEach(b=>b.addEventListener('click',openDrawer));
   document.querySelectorAll('[data-close-cart]').forEach(b=>b.addEventListener('click',closeDrawer));
+  document.querySelectorAll('.insta-link').forEach(link=>{
+    link.addEventListener('click',e=>{
+      e.preventDefault();
+      window.open(link.href,'_blank','noopener');
+    });
+  });
 
   if(itemsEl){
     itemsEl.addEventListener('click',e=>{
@@ -156,11 +162,12 @@
   /* Cart → anfrage */
   const toReq=document.getElementById('cartToRequest');
   if(toReq){
-    toReq.addEventListener('click',()=>{
+    toReq.addEventListener('click',e=>{
       const notes=notesEl?notesEl.value.trim():'';
       if(notes){const msg=document.getElementById('msg');if(msg)msg.value=(msg.value?msg.value+'\n\n':'')+'Anmerkungen zum Warenkorb: '+notes;}
       closeDrawer();
-      const k=document.getElementById('kontakt');if(k)k.scrollIntoView({behavior:'smooth'});
+      const k=document.getElementById('kontakt');
+      if(k){e.preventDefault();k.scrollIntoView({behavior:'smooth'});}
     });
   }
 
