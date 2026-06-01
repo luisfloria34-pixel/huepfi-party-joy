@@ -1,4 +1,8 @@
 (function(){
+  const mobileMenuFix=document.createElement('style');
+  mobileMenuFix.textContent='@media (max-width:1024px){.menu-toggle{justify-self:end}}@media (max-width:420px){.nav-inner{grid-template-columns:auto 1fr}.brand-right{display:none}.menu-toggle{grid-column:2}}';
+  document.head.appendChild(mobileMenuFix);
+
   /* ---------- NAV ---------- */
   const nav=document.getElementById('nav');
   if(nav)window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>20));
@@ -164,7 +168,7 @@
   if(toReq){
     toReq.addEventListener('click',e=>{
       const notes=notesEl?notesEl.value.trim():'';
-      if(notes){const msg=document.getElementById('msg');if(msg)msg.value=(msg.value?msg.value+'\n\n':'')+'Anmerkungen zum Warenkorb: '+notes;}
+      if(notes){const msg=document.getElementById('msg');if(msg)msg.value=(msg.value?'\n\n':'')+'Anmerkungen zum Warenkorb: '+notes;}
       closeDrawer();
       const k=document.getElementById('kontakt');
       if(k){e.preventDefault();k.scrollIntoView({behavior:'smooth'});}
