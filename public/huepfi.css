@@ -226,7 +226,7 @@ a.info-item:hover .ico:not(.ico-insta){background:var(--primary);color:#fff}
   .nav-links.open{transform:translateY(0) scale(1);opacity:1}
   .nav-links a:not(.btn){padding:14px 16px}
   .nav-links .btn{justify-content:center;margin-top:6px}
-  .menu-toggle{display:flex}
+  .menu-toggle{display:flex;justify-self:end}
   .hero-grid{grid-template-columns:1fr;gap:50px;text-align:center}
   .hero p.lead,.hero-eyebrow{margin-left:auto;margin-right:auto}
   .hero-ctas{justify-content:center}
@@ -255,7 +255,9 @@ a.info-item:hover .ico:not(.ico-insta){background:var(--primary);color:#fff}
   .btn{padding:14px 22px;font-size:.95rem}
 }
 @media (max-width:420px){
+  .nav-inner{grid-template-columns:auto 1fr}
   .brand-right{display:none}
+  .menu-toggle{grid-column:2}
 }
 
 /* SUBPAGE LAYOUTS (Hüpfburgen / Equipment) */
