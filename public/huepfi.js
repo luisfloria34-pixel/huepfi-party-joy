@@ -168,7 +168,7 @@
   if(toReq){
     toReq.addEventListener('click',e=>{
       const notes=notesEl?notesEl.value.trim():'';
-      if(notes){const msg=document.getElementById('msg');if(msg)msg.value=(msg.value?'\n\n':'')+'Anmerkungen zum Warenkorb: '+notes;}
+      if(notes){const msg=document.getElementById('msg');if(msg)msg.value=(msg.value?msg.value+'\n\n':'')+'Anmerkungen zum Warenkorb: '+notes;}
       closeDrawer();
       const k=document.getElementById('kontakt');
       if(k){e.preventDefault();k.scrollIntoView({behavior:'smooth'});}
