@@ -20,6 +20,27 @@ Lovable bleibt nur Frontend-Builder. Kunden bekommen keinen Zugriff auf Lovable,
 6. Sanity-CORS für Domain und Vercel-Preview erlauben.
 7. Kunden nur als Sanity-Editor einladen.
 
+## Hüpfi Projekt
+
+- Sanity Project ID: `4njm9ki2`
+- Dataset: `production`
+- Studio: `sanity/`
+- Seed: `sanity/seed/siteSettings.ndjson`
+
+Studio lokal starten:
+
+```bash
+cd sanity
+npm install
+npm run dev
+```
+
+Erstdaten importieren:
+
+```bash
+npx sanity dataset import seed/siteSettings.ndjson production --replace
+```
+
 ## Diese Website
 
 `public/sanity-loader.js` lädt `siteSettings` aus Sanity und überschreibt markierte Inhalte in `public/huepfi.html`.

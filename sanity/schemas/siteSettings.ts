@@ -21,7 +21,12 @@ export const siteSettings = defineType({
             defineField({name: "accent", title: "Orange Hervorhebung", type: "string"}),
             defineField({name: "subtitle", title: "Unterüberschrift", type: "string"}),
             defineField({name: "lead", title: "Beschreibung", type: "text"}),
-            defineField({name: "imageUrl", title: "Hero Bild URL", type: "url"}),
+            defineField({
+              name: "image",
+              title: "Hero Bild",
+              type: "image",
+              options: {hotspot: true},
+            }),
           ],
         }),
       ],
@@ -36,7 +41,8 @@ export const siteSettings = defineType({
           fields: [
             defineField({name: "title", title: "Titel", type: "string"}),
             defineField({name: "description", title: "Beschreibung", type: "text"}),
-            defineField({name: "imageUrl", title: "Bild URL", type: "url"}),
+            defineField({name: "price", title: "Preis / Hinweis", type: "string"}),
+            defineField({name: "image", title: "Bild", type: "image", options: {hotspot: true}}),
           ],
         },
       ],
@@ -47,7 +53,7 @@ export const siteSettings = defineType({
       type: "object",
       fields: [
         defineField({name: "text", title: "Text", type: "text"}),
-        defineField({name: "imageUrl", title: "Bild URL", type: "url"}),
+        defineField({name: "image", title: "Bild", type: "image", options: {hotspot: true}}),
       ],
     }),
     defineField({
@@ -65,6 +71,7 @@ export const siteSettings = defineType({
         defineField({name: "emailNote", title: "E-Mail-Hinweis", type: "string"}),
         defineField({name: "address", title: "Adresse", type: "string"}),
         defineField({name: "openingHours", title: "Öffnungszeiten", type: "string"}),
+        defineField({name: "instagram", title: "Instagram", type: "string"}),
       ],
     }),
   ],

@@ -8,7 +8,7 @@ export const blogPost = defineType({
     defineField({name: "title", title: "Titel", type: "string"}),
     defineField({name: "slug", title: "Slug", type: "slug", options: {source: "title"}}),
     defineField({name: "publishedAt", title: "Veröffentlichungsdatum", type: "datetime"}),
-    defineField({name: "imageUrl", title: "Bild URL", type: "url"}),
+    defineField({name: "image", title: "Bild", type: "image", options: {hotspot: true}}),
     defineField({name: "body", title: "Inhalt", type: "array", of: [{type: "block"}]}),
   ],
 });

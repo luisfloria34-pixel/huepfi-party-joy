@@ -5,10 +5,19 @@
   const apiHost = config.useCdn ? "apicdn" : "api";
   const query = encodeURIComponent(`*[_type == "siteSettings"][0]{
     companyName,
-    homepage,
+    homepage{
+      hero{
+        eyebrow,
+        title,
+        accent,
+        subtitle,
+        lead,
+        "imageUrl": image.asset->url
+      }
+    },
     contact,
-    services[]{title, description, imageUrl},
-    about,
+    services[]{title, description, price, "imageUrl": image.asset->url},
+    about{text, "imageUrl": image.asset->url},
     seo
   }`);
   const url = `https://${config.projectId}.${apiHost}.sanity.io/v${config.apiVersion}/data/query/${config.dataset}?query=${query}`;
