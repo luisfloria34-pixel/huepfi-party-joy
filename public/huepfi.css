@@ -469,7 +469,9 @@ a.info-item:hover .ico:not(.ico-insta){background:var(--primary);color:#fff}
   .tg-grid{grid-template-columns:1fr}
   .reviews-grid{grid-template-columns:1fr}
   .em-visual{grid-template-columns:1fr 1fr}
-  .cart-fab{right:14px;bottom:92px;padding:12px 18px;font-size:.9rem}
+  .cart-fab{right:16px;bottom:160px;padding:11px 16px;font-size:.88rem}
+  .cart-fab svg{width:20px;height:20px}
+  .cart-fab .cart-count{min-width:22px;height:22px;font-size:.78rem}
   .slide-content{padding:24px 22px}
   .slide-nav{width:36px;height:36px}
   .slideshow{aspect-ratio:4/5}
