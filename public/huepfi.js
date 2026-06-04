@@ -141,10 +141,11 @@
   });
 
   /* Drawer controls */
-  function openDrawer(){if(drawer){drawer.classList.add('open');document.body.style.overflow='hidden';}}
-  function closeDrawer(){if(drawer){drawer.classList.remove('open');document.body.style.overflow='';}}
+  function openDrawer(){if(drawer){drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}}
+  function closeDrawer(){if(drawer){drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true');document.body.style.overflow='';}}
   document.querySelectorAll('[data-open-cart]').forEach(b=>b.addEventListener('click',openDrawer));
   document.querySelectorAll('[data-close-cart]').forEach(b=>b.addEventListener('click',closeDrawer));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
   document.querySelectorAll('.insta-link').forEach(link=>{
     link.addEventListener('click',e=>{
       e.preventDefault();
@@ -167,11 +168,13 @@
   const toReq=document.getElementById('cartToRequest');
   if(toReq){
     toReq.addEventListener('click',e=>{
+      e.preventDefault();
       const notes=notesEl?notesEl.value.trim():'';
       if(notes){const msg=document.getElementById('msg');if(msg)msg.value=(msg.value?msg.value+'\n\n':'')+'Anmerkungen zum Warenkorb: '+notes;}
       closeDrawer();
       const k=document.getElementById('kontakt');
-      if(k){e.preventDefault();k.scrollIntoView({behavior:'smooth'});}
+      if(k)k.scrollIntoView({behavior:'smooth'});
+      else window.location.href='/huepfi.html#kontakt';
     });
   }
 
