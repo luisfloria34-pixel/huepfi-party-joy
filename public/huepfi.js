@@ -143,12 +143,18 @@
   /* Drawer controls */
   function restorePage(){
     document.body.style.overflow='';
+    document.body.classList.remove('cart-open');
     if(nav)nav.style.display='';
   }
-  function openDrawer(){if(drawer){drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}}
+  function openDrawer(){if(drawer){drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');document.body.classList.add('cart-open');document.body.style.overflow='hidden';drawer.querySelector('.cart-panel')?.scrollTo({top:0});}}
   function closeDrawer(){if(drawer){drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true');restorePage();}}
   document.querySelectorAll('[data-open-cart]').forEach(b=>b.addEventListener('click',openDrawer));
   document.querySelectorAll('[data-close-cart]').forEach(b=>b.addEventListener('click',closeDrawer));
+  document.addEventListener('click',e=>{
+    const requestLink=e.target.closest('a[href$="#kontakt"],a[href="#kontakt"]');
+    if(!requestLink)return;
+    if(drawer?.classList.contains('open'))closeDrawer();
+  });
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
   window.addEventListener('pageshow',restorePage);
   window.addEventListener('hashchange',restorePage);
@@ -180,7 +186,7 @@
       if(notes){const msg=document.getElementById('msg');if(msg)msg.value=(msg.value?msg.value+'\n\n':'')+'Anmerkungen zum Warenkorb: '+notes;}
       closeDrawer();
       const k=document.getElementById('kontakt');
-      if(k)k.scrollIntoView({behavior:'smooth'});
+      if(k)setTimeout(()=>k.scrollIntoView({behavior:'smooth'}),80);
       else window.location.href='/huepfi.html#kontakt';
     });
   }

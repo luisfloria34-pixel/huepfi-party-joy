@@ -315,13 +315,14 @@ a.info-item:hover .ico:not(.ico-insta){background:var(--primary);color:#fff}
 
 .cart-drawer{position:fixed;inset:0;z-index:200;display:none}
 .cart-drawer.open{display:block}
+body.cart-open{overflow:hidden}
 .cart-back{position:absolute;inset:0;background:rgba(15,23,42,.55);backdrop-filter:blur(4px);animation:fadeIn .25s ease}
-.cart-panel{position:absolute;right:0;top:0;bottom:0;width:min(440px,100%);height:100dvh;max-height:100dvh;background:#fff;display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(0,0,0,.2);animation:slideIn .3s ease;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
+.cart-panel{position:absolute;right:0;top:0;bottom:0;width:min(440px,100%);height:100dvh;max-height:100dvh;background:#fff;display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(0,0,0,.2);animation:slideIn .3s ease;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom);overflow:hidden}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes slideIn{from{transform:translateX(100%)}to{transform:none}}
 .cart-head{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:2}
 .cart-head h3{font-size:1.4rem}
-.cart-close{position:absolute;right:16px;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(234,88,12,.28)}
+.cart-close{position:fixed;right:16px;top:calc(18px + env(safe-area-inset-top));z-index:5;width:46px;height:46px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(234,88,12,.28)}
 .cart-close:hover{background:var(--primary);color:#fff}
 .cart-items{flex:1;overflow:auto;padding:18px 24px;display:flex;flex-direction:column;gap:14px}
 .cart-empty{text-align:center;color:#64748b;padding:60px 20px;font-size:.95rem}
