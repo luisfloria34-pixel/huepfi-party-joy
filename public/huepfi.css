@@ -38,7 +38,7 @@ h1,h2,h3,h4{font-family:'Fredoka',sans-serif;color:var(--foreground);line-height
 .btn-block{width:100%}
 
 /* NAV */
-.nav{position:sticky;top:0;z-index:100;transition:.3s;padding:12px 0;background:rgba(255,247,237,.7);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.nav{position:sticky;top:0;z-index:180;transition:.3s;padding:12px 0;background:rgba(255,247,237,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transform:translateZ(0)}
 .nav.scrolled{background:rgba(255,247,237,.92);box-shadow:0 4px 20px rgba(15,23,42,.06)}
 .nav-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px}
 .logo{display:flex;align-items:center;gap:10px}
@@ -321,7 +321,7 @@ a.info-item:hover .ico:not(.ico-insta){background:var(--primary);color:#fff}
 @keyframes slideIn{from{transform:translateX(100%)}to{transform:none}}
 .cart-head{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:2}
 .cart-head h3{font-size:1.4rem}
-.cart-close{width:40px;height:40px;border-radius:12px;background:var(--muted);color:var(--foreground);display:flex;align-items:center;justify-content:center}
+.cart-close{position:absolute;right:16px;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(234,88,12,.28)}
 .cart-close:hover{background:var(--primary);color:#fff}
 .cart-items{flex:1;overflow:auto;padding:18px 24px;display:flex;flex-direction:column;gap:14px}
 .cart-empty{text-align:center;color:#64748b;padding:60px 20px;font-size:.95rem}
@@ -346,7 +346,8 @@ a.info-item:hover .ico:not(.ico-insta){background:var(--primary);color:#fff}
 
 @media (max-width:640px){
   .cart-panel{left:0;width:100%;height:100svh;max-height:100svh}
-  .cart-head{padding:14px 18px}
+  .cart-head{padding:14px 72px 14px 18px;min-height:72px}
+  .cart-close{right:18px;width:50px;height:50px}
   .cart-items{padding:14px 18px}
   .cart-empty{padding:42px 12px}
   .cart-foot{padding:14px 18px calc(18px + env(safe-area-inset-bottom))}

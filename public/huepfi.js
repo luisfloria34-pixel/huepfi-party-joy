@@ -141,11 +141,18 @@
   });
 
   /* Drawer controls */
+  function restorePage(){
+    document.body.style.overflow='';
+    if(nav)nav.style.display='';
+  }
   function openDrawer(){if(drawer){drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}}
-  function closeDrawer(){if(drawer){drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true');document.body.style.overflow='';}}
+  function closeDrawer(){if(drawer){drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true');restorePage();}}
   document.querySelectorAll('[data-open-cart]').forEach(b=>b.addEventListener('click',openDrawer));
   document.querySelectorAll('[data-close-cart]').forEach(b=>b.addEventListener('click',closeDrawer));
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
+  window.addEventListener('pageshow',restorePage);
+  window.addEventListener('hashchange',restorePage);
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)restorePage();});
   document.querySelectorAll('.insta-link').forEach(link=>{
     link.addEventListener('click',e=>{
       e.preventDefault();
